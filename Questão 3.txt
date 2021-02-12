@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define TAMANHO 15
+
+/*
+ *  Escrever um programa em C que crie uma Matriz secundária de inteiros positivos de ordem 15 x 15
+ *  com valores aleatórios entre [10, 99] e exiba o dobro do valor de cada elemento ímpar da matriz secundária.
+ */
+int main(void) {
+    srand(time(NULL));
+
+    int matriz[TAMANHO][TAMANHO];
+    
+
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
+
+            if (i + j == TAMANHO - 1) {
+                //Entre 10 e 99(10 + 89)
+                matriz[i][j] = 10 + (rand() % 89);
+            } else {
+                matriz[i][j] = 0;
+            }
+
+            if (matriz[i][j] % 2 != 0) {
+                printf("Matriz secundaria com numero impar no indice[%i][%i]!\n", i, j);
+                printf("Valor desse indice : %i\n", matriz[i][j]);
+                matriz[i][j] = matriz[i][j] * 2;
+                printf("Dobro do valor : %i\n", matriz[i][j]);
+                printf("------------------------------------\n");
+            }
+
+        }
+
+    }
+
+
+    return 0;
+}
+
+

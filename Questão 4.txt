@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define TAMANHOTURMA 5
+#define TAMANHOALUNOS 2
+
+/*
+ *  Escrever um programa em C que leia as notas: 0.0 A 10.0 de 5 turmas com 30 alunos cada turma.
+ *  Mostre a média das notas por turma no final do programa.
+ */
+int main(void) {
+
+    int matriz[TAMANHOTURMA][TAMANHOALUNOS];
+    float contador = 0;
+    float media[TAMANHOTURMA];
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Digite a nota do aluno [%i] da turma [%i]\n", j, i);
+            scanf("%i", &matriz[i][j]);
+            media[i] += matriz[i][j];
+            contador++;
+
+        }
+
+        printf("A media da turma %i eh : %.2f\n", i, media[i] / contador);
+        printf("========================================================\n");
+        media[i] = 0;
+        contador = 0;
+    }
+
+
+    return 0;
+}
+
+

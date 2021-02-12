@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define TAMANHO 5
+
+/*
+ *  Escrever um programa em C que crie uma Matriz Triangular Superior de
+ *  inteiros de ordem 5 x 5 com valores lidos do usuário e exiba a média de seus elementos. Mostre o resultado no final.
+ */
+int main(void) {
+
+    int matriz[TAMANHO][TAMANHO];
+    int media = 0;
+    int contador = 0;
+
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
+
+            if (i > j) {
+                matriz[i][j] = 0;
+
+            } else {
+                printf("Indice [%i][%i] : \n", i, j);
+                scanf("%i", &matriz[i][j]);
+                media += matriz[i][j];
+                contador++;
+            }
+
+        }
+
+    }
+
+   
+    printf("A media dos valores digitados eh : %i", media / contador);
+
+}
+

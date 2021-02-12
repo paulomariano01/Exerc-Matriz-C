@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+/*
+ * Escrever um programa em C que crie duas Matrizes A e B de mesma ordem 2 x 3 com valores reais lidos do usuário.
+ * Armazene a soma de 3 * A e B / 2 numa matriz C e exiba o resultado no final.
+ */
+int main(void) {
+
+    float matrizA[2][3];
+    float matrizB[2][3];
+    float matrizC[2][3];
+    int i, j;
+
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("Digite o indice [%i][%i] da matriz A:\n", i, j);
+            scanf("%f", &matrizA[i][j]);
+        }
+    }
+    printf("-----------------------------------------------\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("Digite o indice [%i][%i] da matriz B:\n", i, j);
+            scanf("%f", &matrizB[i][j]);
+        }
+    }
+    printf("-----------------------------------------------\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 3; j++) {
+            matrizC[i][j] = (3 * matrizA[i][j]) + (matrizB[i][j] / 2);
+            printf("Indice [%i][%i] da matriz C:\n", i, j);
+            printf("%.2f\n", matrizC[i][j]);
+            printf("--------------\n");
+
+        }
+
+    }
+
+
+    return 0;
+}
+
+

@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+/*
+ *  Escrever um programa em C que crie uma Matriz de
+ *  reais de ordem 3 x 2 com valores lidos do usuário e exiba o menor elemento da matriz e sua posição na Matriz: [Linha] [Coluna].
+ */
+int main(void) {
+
+    float matriz[3][2];
+    float menorValor = 200; // Declarado um valor bem alto para que haja um menor valor na matriz
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Indice [%i][%i]:\n", i, j);
+            scanf("%f", &matriz[i][j]);
+
+            if (matriz[i][j] < menorValor) {
+                menorValor = matriz[i][j];
+            }
+        }
+
+    }
+
+    printf("Menor valor da matriz: %.2f", menorValor);
+
+
+    return 0;
+}
+
+

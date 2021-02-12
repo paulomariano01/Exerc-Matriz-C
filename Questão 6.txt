@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define TAMANHO 1000
+
+
+/*
+ * Faça um algoritmo em C que preencha dois vetores A e B (TAMANHO: 1000) com valores inteiros.
+ * Depois de preencher os vetores, exiba se os vetores são iguais ou diferentes. Usar o RAND.
+ */
+
+int main(void) {
+
+    srand(time(NULL));
+
+    int vetorA[TAMANHO], vetorB[TAMANHO];
+
+    for (int i = 0; i < TAMANHO; i++) {
+        vetorA[i] = rand() % 5;
+        vetorB[i] = rand() % 5;
+
+        if (vetorA[i] == vetorB[i]) {
+            printf("O indice [%i] de A e B sao iguais! \n", i);
+            printf("Valores iguais: %i\n", vetorA[i]);
+            printf("=================================\n");
+
+        } else if (vetorA[i] != vetorB[i]) {
+            printf("O indice de [%i] A e B sao diferentes! \n", i);
+            printf("Valor de A : %i \n", vetorA[i]);
+            printf("Valor de B : %i \n", vetorB[i]);
+            printf("------------------------------\n");
+        }
+    }
+
+
+}
+
